@@ -5,7 +5,7 @@
  */
 package MainPackage;
 
-import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -21,6 +21,10 @@ public class GPanel extends JPanel{
     private int y=0;
     private int xa=0;
     private int ya=0;
+    
+    public GPanel(){
+      
+    }
     public int getX() {
         return x;
     }
@@ -39,15 +43,12 @@ public class GPanel extends JPanel{
     
     
     public void moveBall(){
-        if (x + xa < 0)
-			xa = 1;
-		if (x + xa > getWidth() - 30)
-			xa = -1;
-		if (y + ya < 0)
-			ya = 1;
-		if (y + ya > getHeight() - 30)
-			ya = -1;
-		
+        //condiciones para cambiar la dirección
+        if (x + xa < 0) xa = 1;
+	if (x + xa > getWidth() - 30) xa = -1;
+	if (y + ya < 0) ya = 1;
+	if (y + ya > getHeight() - 30) ya = -1;
+	//movimiento	
 		x = x + xa;
 		y = y + ya;
     }
