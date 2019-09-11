@@ -27,13 +27,13 @@ public class GameFrame extends JFrame {
     //intentar mover al controlador 
     private int x = 0;
     private int y = 0;
-    private int xa = 0;
-    private int ya = 0;
+    private int xa = 1;
+    private int ya = 1;
 
     public GameFrame() {
         
         this.setVisible(true);
-        this.setLocation(new Point((int) monitorSize.getWidth() / 2 - 150, (int) monitorSize.getHeight() / 2 - 150));//coloca el frame centrado en la pantalla
+        this.setLocationRelativeTo(null);
         this.setSize(new Dimension(300, 300));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Frontenis");
@@ -52,6 +52,7 @@ public class GameFrame extends JFrame {
 
     public static void main(String[] args) throws InterruptedException {
         GameFrame gf= new GameFrame();
+        
         while (true) {
             gc.moveBall();//update
             gf.repaint();//render, this method causes a call to this component's paint method as soon as possible.
